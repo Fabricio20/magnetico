@@ -1,7 +1,7 @@
 FROM golang:1.21-alpine AS build
 WORKDIR /magnetico
 
-RUN apk add --no-cache build-base pkgconf git curl libsodium libzmq czmq
+RUN apk add --no-cache build-base pkgconf git curl libsodium-dev libzmq czmq
 
 ADD ./pkg             /magnetico/pkg
 ADD ./go.mod          /magnetico/go.mod
@@ -13,7 +13,7 @@ FROM alpine:latest
 LABEL maintainer="git@notfab.net"
 WORKDIR /
 
-RUN apk add --no-cache libsodium libzmq czmq
+RUN apk add --no-cache libsodium-dev libzmq czmq
 COPY --from=build /magnetico/src/magneticod /magneticod
 
 ENTRYPOINT ["/magneticod"]
