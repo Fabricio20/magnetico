@@ -9,7 +9,7 @@
 # magnetico
 *Autonomous (self-hosted) BitTorrent DHT search engine suite.*
 
-[![chat on gitter](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/magnetico-dev/magnetico-dev)&emsp;[![Go](https://github.com/boramalper/magnetico/workflows/Go/badge.svg)](https://github.com/boramalper/magnetico/actions)&emsp;[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1029/badge)](https://bestpractices.coreinfrastructure.org/projects/1029)
+[![chat on gitter](https://badges.gitter.im/gitterHQ/gitter.png)](https://gitter.im/magnetico-dev/magnetico-dev)&emsp;[![Go](https://github.com/fabricio20/magnetico/workflows/Go/badge.svg)](https://github.com/fabricio20/magnetico/actions)&emsp;[![CII Best Practices](https://bestpractices.coreinfrastructure.org/projects/1029/badge)](https://bestpractices.coreinfrastructure.org/projects/1029)
 
 magnetico is the first autonomous (self-hosted) BitTorrent DHT search engine suite that is *designed
 for end-users*. The suite consists of two packages:
@@ -25,7 +25,7 @@ central entity*.
 
 ## Features
 - Easy installation & minimal requirements:
-  - [Pre-compiled static binaries](https://github.com/boramalper/magnetico/releases) and [Docker images](https://hub.docker.com/u/boramalper) are provided.
+  - [Pre-compiled static binaries](https://github.com/fabricio20/magnetico/releases) and [Docker images](https://hub.docker.com/u/boramalper) are provided.
   - Root access is *not* required to install or to use.
 - Near-zero configuration:
   - **magneticod** works out of the box, no configuration required
@@ -66,11 +66,11 @@ for torrents in the network, hence removing the need for centralised torrent web
 
 > **WARNING:**
 >
-> Do NOT clone the [repository](https://github.com/boramalper/magnetico) to install **magnetico**,
+> Do NOT clone the [repository](https://github.com/fabricio20/magnetico) to install **magnetico**,
 > as it is never meant to be stable (except
-> [releases](https://github.com/boramalper/magnetico/releases) of course).
+> [releases](https://github.com/fabricio20/magnetico/releases) of course).
 
-1. Install **magneticod** first by following its [installation instructions](cmd/magneticod/README.md).
+1. Install **magneticod** first by following its [installation instructions](src/README.md).
 
 ### Docker
 

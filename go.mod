@@ -1,33 +1,39 @@
-module github.com/boramalper/magnetico
+module github.com/fabricio20/magnetico
 
-go 1.15
+go 1.21
 
 require (
 	github.com/Wessie/appdirs v0.0.0-20141031215813-6573e894f8e2
-	github.com/anacrolix/dht v1.0.1 // indirect
-	github.com/anacrolix/missinggo v1.2.1
-	github.com/anacrolix/missinggo/v2 v2.4.0 // indirect
-	github.com/anacrolix/torrent v1.14.0
-	github.com/chzyer/readline v0.0.0-20180603132655-2972be24d48e // indirect
-	github.com/dustin/go-humanize v1.0.0
-	github.com/google/pprof v0.0.0-20190515194954-54271f7e092f // indirect
-	github.com/gorilla/mux v1.7.4
-	github.com/gorilla/schema v1.1.0
-	github.com/iwanbk/gobeanstalk v0.0.0-20160903043409-dbbb23937c31
-	github.com/jackc/pgx/v4 v4.9.2
-	github.com/jessevdk/go-flags v1.4.0
-	github.com/kevinburke/go-bindata v3.16.0+incompatible // indirect
-	github.com/libp2p/go-sockaddr v0.0.1
-	github.com/mattn/go-sqlite3 v2.0.3+incompatible
+	github.com/anacrolix/missinggo v1.3.0
+	github.com/anacrolix/torrent v1.52.5
+	github.com/jessevdk/go-flags v1.5.0
+	github.com/libp2p/go-sockaddr v0.2.0
 	github.com/pkg/errors v0.9.1
-	github.com/pkg/profile v1.4.0
+	github.com/pkg/profile v1.7.0
 	github.com/willf/bloom v2.0.3+incompatible
-	go.uber.org/zap v1.14.0
-	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
-	golang.org/x/lint v0.0.0-20200130185559-910be7a94367 // indirect
-	golang.org/x/net v0.0.0-20200222125558-5a598a2470a0 // indirect
-	golang.org/x/sys v0.0.0-20200223170610-d5e6a3e2c0ae
-	golang.org/x/text v0.3.3
-	golang.org/x/tools v0.0.0-20200221224223-e1da425f72fd // indirect
-	honnef.co/go/tools v0.0.1-2020.1.3 // indirect
+	go.uber.org/zap v1.26.0
+	golang.org/x/sys v0.13.0
+)
+
+require (
+	github.com/anacrolix/missinggo/v2 v2.7.2-0.20230527121029-a582b4f397b9 // indirect
+	github.com/bradfitz/iter v0.0.0-20191230175014-e8f45d346db8 // indirect
+	github.com/felixge/fgprof v0.9.3 // indirect
+	github.com/google/pprof v0.0.0-20211214055906-6f57359322fd // indirect
+	github.com/huandu/xstrings v1.3.2 // indirect
+	github.com/jackc/chunkreader/v2 v2.0.1 // indirect
+	github.com/jackc/pgconn v1.7.2 // indirect
+	github.com/jackc/pgio v1.0.0 // indirect
+	github.com/jackc/pgpassfile v1.0.0 // indirect
+	github.com/jackc/pgproto3/v2 v2.0.6 // indirect
+	github.com/jackc/pgservicefile v0.0.0-20200714003250-2b9c44734f2b // indirect
+	github.com/jackc/pgtype v1.6.1 // indirect
+	github.com/jackc/pgx/v4 v4.9.2 // indirect
+	github.com/mattn/go-sqlite3 v2.0.3+incompatible // indirect
+	github.com/spaolacci/murmur3 v1.1.0 // indirect
+	github.com/willf/bitset v1.1.10 // indirect
+	go.uber.org/multierr v1.10.0 // indirect
+	golang.org/x/crypto v0.5.0 // indirect
+	golang.org/x/text v0.7.0 // indirect
+	golang.org/x/xerrors v0.0.0-20220609144429-65e65417b02f // indirect
 )

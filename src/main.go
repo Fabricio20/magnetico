@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github.com/jessevdk/go-flags"
 	"net"
 	"os"
 	"os/signal"
@@ -9,15 +10,14 @@ import (
 	"github.com/pkg/errors"
 	"github.com/pkg/profile"
 
-	"github.com/jessevdk/go-flags"
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/boramalper/magnetico/cmd/magneticod/bittorrent/metadata"
-	"github.com/boramalper/magnetico/cmd/magneticod/dht"
+	"github.com/fabricio20/magnetico/src/bittorrent/metadata"
+	"github.com/fabricio20/magnetico/src/dht"
 
-	"github.com/boramalper/magnetico/pkg/persistence"
-	"github.com/boramalper/magnetico/pkg/util"
+	"github.com/fabricio20/magnetico/pkg/persistence"
+	"github.com/fabricio20/magnetico/pkg/util"
 )
 
 type opFlags struct {

@@ -15,7 +15,7 @@ fetches metadata from the peers.
   **magneticod** should just work fine.
 
 ### Installing the Pre-Compiled Static Binary
-You can find the latest pre-compiled static binaries on [GitHub](https://github.com/boramalper/magnetico/releases)
+You can find the latest pre-compiled static binaries on [GitHub](https://github.com/fabricio20/magnetico/releases)
 for versions from v0.7.0 onwards. 
 
 ### Installing the Docker Image

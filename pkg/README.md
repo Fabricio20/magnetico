@@ -1,5 +1,5 @@
 # magnetico/pkg
-[![GoDoc](https://godoc.org/github.com/boramalper/magnetico?status.svg)](https://godoc.org/github.com/boramalper/magnetico)
+[![GoDoc](https://godoc.org/github.com/fabricio20/magnetico?status.svg)](https://godoc.org/github.com/fabricio20/magnetico)
 
 - The most significant package is `persistence`, that abstracts access to the
   magnetico databases with different engines (currently, stdout).

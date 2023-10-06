@@ -6,7 +6,7 @@ RUN apk add --no-cache build-base curl git
 ADD ./Makefile        /magnetico/
 ADD ./pkg             /magnetico/pkg
 ADD ./go.mod          /magnetico/go.mod
-ADD ./cmd/magneticod  /magnetico/cmd/magneticod
+ADD src/magneticod  /magnetico/cmd/magneticod
 
 RUN     make magneticod
 
