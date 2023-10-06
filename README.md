@@ -24,7 +24,7 @@ original's `stdout` stream. You can find data format and more information [here]
 
 ## Features
 - Easy installation & minimal requirements:
-  - [Pre-compiled static binaries](https://github.com/fabricio20/magnetico/releases) and [Docker images](https://hub.docker.com/u/boramalper) are provided.
+  - [Docker images](https://github.com/Fabricio20/magnetico/pkgs/container/magnetico%2Fmagneticod) are provided.
   - Root access is *not* required to install or to use.
 - Near-zero configuration:
   - **magneticod** works out of the box, no configuration required
@@ -48,13 +48,9 @@ for torrents in the network, hence removing the need for centralised torrent web
 
 ## Installation Instructions
 
-### Binary
-
-You can download a compiled binary on the GitHub releases page.
-
-### Docker
-
-This fork provides a docker image for your convenience, it's available under GitHub Packages.
+This fork provides a docker image for your convenience, it's available
+under [GitHub Packages](https://github.com/Fabricio20/magnetico/pkgs/container/magnetico%2Fmagneticod). Simply run the
+container and expose the ZeroMQ port (TCP/2222).
 
 ## License
 

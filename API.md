@@ -28,5 +28,5 @@ to subscribers:
 }
 ```
 
-By default, the ZeroMQ PUB binds to port `2222` on `UDP`. It is not currently possible to configure this, however
+By default, the ZeroMQ PUB binds to `TCP/2222`. It is not currently possible to configure this, however
 you can always remap using docker.
