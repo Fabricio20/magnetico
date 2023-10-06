@@ -3,6 +3,7 @@
 all: test magneticod
 
 magneticod:
+	go mod download
 	go install --tags fts5 "-ldflags=-s -w -X main.compiledOn=`date -u +%Y-%m-%dT%H:%M:%SZ`" ./cmd/magneticod
 
 .PHONY: docker
