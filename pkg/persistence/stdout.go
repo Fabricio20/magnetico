@@ -3,13 +3,12 @@ package persistence
 import (
 	"encoding/hex"
 	"encoding/json"
-	"net/url"
 	"os"
 
 	"github.com/pkg/errors"
 )
 
-func makeStdoutDatabase(_ *url.URL) (Database, error) {
+func makeStdoutDatabase() (Database, error) {
 	s := new(stdout)
 	s.encoder = json.NewEncoder(os.Stdout)
 	return s, nil

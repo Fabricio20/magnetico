@@ -3,10 +3,7 @@ package persistence
 import (
 	"encoding/hex"
 	"encoding/json"
-	"fmt"
 	"github.com/pkg/errors"
-	"net/url"
-
 	"go.uber.org/zap"
 )
 
@@ -109,35 +106,11 @@ func (tm *TorrentMetadata) MarshalJSON() ([]byte, error) {
 	})
 }
 
-func MakeDatabase(rawURL string, logger *zap.Logger) (Database, error) {
+func MakeDatabase(logger *zap.Logger) (Database, error) {
 	if logger != nil {
 		zap.ReplaceGlobals(logger)
 	}
-
-	url_, err := url.Parse(rawURL)
-	if err != nil {
-		return nil, errors.Wrap(err, "url.Parse")
-	}
-
-	switch url_.Scheme {
-	case "sqlite3":
-		return makeSqlite3Database(url_)
-
-	case "postgres":
-		return makePostgresDatabase(url_)
-
-	case "stdout":
-		return makeStdoutDatabase(url_)
-
-	case "beanstalk", "beanstalkd":
-		return makeBeanstalkDatabase(url_)
-
-	case "mysql":
-		return nil, fmt.Errorf("mysql is not yet supported")
-
-	default:
-		return nil, fmt.Errorf("unknown URI scheme: `%s`", url_.Scheme)
-	}
+	return makeStdoutDatabase()
 }
 
 func NewStatistics() (s *Statistics) {

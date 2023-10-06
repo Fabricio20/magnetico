@@ -15,7 +15,6 @@ magnetico is the first autonomous (self-hosted) BitTorrent DHT search engine sui
 for end-users*. The suite consists of two packages:
 
 - **magneticod:** Autonomous BitTorrent DHT crawler and metadata fetcher.
-- **magneticow:** Lightweight web interface for magnetico.
 
 Both programs, combined together, allows anyone with a decent Internet connection to access the vast
 amount of torrents waiting to be discovered within the BitTorrent DHT space, *without relying on any
@@ -29,8 +28,7 @@ central entity*.
   - [Pre-compiled static binaries](https://github.com/boramalper/magnetico/releases) and [Docker images](https://hub.docker.com/u/boramalper) are provided.
   - Root access is *not* required to install or to use.
 - Near-zero configuration:
-  - Both programs work out of the box, and **magneticow** can be used without a web-server too.
-  - Detailed, step-by-step manual to guide you through the installation.
+  - **magneticod** works out of the box, no configuration required
 - No reliance on any centralised entity:
   - **magneticod** trawls the BitTorrent DHT by "going" from one node to another, and fetches the
     metadata using the nodes without using trackers.
@@ -41,9 +39,6 @@ central entity*.
 - High performance implementation in Go:
   - **magneticod** utilizes every bit of your resources to discover as many infohashes & metadata as
     possible.
-- Built-in lightweight web interface:
-  - **magneticow** features a lightweight web interface to help you access the database without
-    getting on your way.
 
 ### Screenshots
 *Click on the images to view full-screen.*
@@ -76,20 +71,16 @@ for torrents in the network, hence removing the need for centralised torrent web
 > [releases](https://github.com/boramalper/magnetico/releases) of course).
 
 1. Install **magneticod** first by following its [installation instructions](cmd/magneticod/README.md).
-2. Install **magneticow** afterwards by following its
-   [installation instructions](cmd/magneticow/README.md).
 
 ### Docker
 
-Run **magneticod** and **magneticow** with:
+Run **magneticod** with:
 
 ``` bash
 make docker
 ```
 
 It will run magnetico from already built image on [Docker Hub](https://hub.docker.com/u/boramalper)!
-
-You should access magneticow at <http://localhost:8080>.
 
 To build fresh images from source, first run:
 

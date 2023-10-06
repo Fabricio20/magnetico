@@ -1,7 +1,6 @@
 vendor/
 .idea/
 Gopkg.lock
-cmd/magneticow/bindata.go
 go.sum
 
 
