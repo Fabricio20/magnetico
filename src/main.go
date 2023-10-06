@@ -31,8 +31,6 @@ type opFlags struct {
 	Profile   string
 }
 
-var compiledOn string
-
 func main() {
 	loggerLevel := zap.NewAtomicLevel()
 	// Logging levels: ("debug", "info", "warn", "error", "dpanic", "panic", and "fatal").
@@ -54,7 +52,6 @@ func main() {
 	zap.L().Info("magneticod v0.13.0 has been started.")
 	zap.L().Info("Copyright (C) 2017-2020 Mert Bora ALPER <bora@boramalper.org>.")
 	zap.L().Info("Dedicated to Cemile Binay, in whose hands I thrived.")
-	zap.S().Infof("Compiled on %s", compiledOn)
 
 	switch opFlags.Verbosity {
 	case 0:
@@ -119,9 +116,7 @@ func main() {
 		}
 	}
 
-	if err = database.Close(); err != nil {
-		zap.L().Error("Could not close database!", zap.Error(err))
-	}
+	database.Close()
 }
 
 func parseFlags() (*opFlags, error) {

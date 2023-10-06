@@ -1,21 +1,19 @@
 FROM golang:1.21-alpine AS build
 WORKDIR /magnetico
 
-RUN apk add --no-cache build-base curl git
+RUN apk add --no-cache build-base libsodium libzmq czmq
 
-ADD ./Makefile        /magnetico/
 ADD ./pkg             /magnetico/pkg
 ADD ./go.mod          /magnetico/go.mod
-ADD src/magneticod  /magnetico/cmd/magneticod
+ADD ./src             /magnetico
 
-RUN     make magneticod
+RUN go build -o magneticod
 
 FROM alpine:latest
 LABEL maintainer="git@notfab.net"
 WORKDIR /
-VOLUME /root/.local/share/magneticod
-VOLUME /root/.config/magneticod
 
-COPY --from=build /go/bin/magneticod /magneticod
+RUN apk add --no-cache libsodium libzmq czmq
+COPY --from=build /magnetico/magneticod /magneticod
 
 ENTRYPOINT ["/magneticod"]

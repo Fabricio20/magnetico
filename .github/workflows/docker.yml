@@ -1,0 +1,36 @@
+name: Golang
+on:
+  - push
+  - workflow_dispatch
+env:
+  IMAGE_NAME: ghcr.io/fabricio20/magnetico/magneticod
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      # Login to registry
+      - name: Log into registry
+        if: github.event_name == 'push'
+        run: echo "${{ secrets.GITHUB_TOKEN }}" | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+      # Build docker image
+      - name: Build Docker
+        if: github.event_name == 'push'
+        run: docker build -t $IMAGE_NAME
+      # Push docker image
+      - name: Push image
+        if: github.event_name == 'push'
+        run: |
+          # Strip git ref prefix from version
+          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
+
+          # Strip "v" prefix from tag name
+          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
+
+          # Use Docker `latest` tag convention
+          [ "$VERSION" == "master" ] && VERSION=latest
+
+          echo VERSION=$VERSION
+          
+          docker tag $IMAGE_NAME:latest $IMAGE_NAME:$VERSION
+          docker push $IMAGE_NAME:$VERSION
