@@ -15,6 +15,6 @@ jobs:
         uses: actions/checkout@v2
       - name: Go Build
         run: |
-          go mod download
+          go mod tidy
           cd src
           go build

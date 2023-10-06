@@ -7,7 +7,7 @@ ADD ./pkg             /magnetico/pkg
 ADD ./go.mod          /magnetico/go.mod
 ADD ./src             /magnetico
 
-RUN go mod download && go build -o magneticod
+RUN go mod tidy && go build -o magneticod
 
 FROM alpine:latest
 LABEL maintainer="git@notfab.net"
