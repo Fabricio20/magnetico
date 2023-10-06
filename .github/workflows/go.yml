@@ -14,5 +14,7 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v2
       - name: Go Build
-        working-directory: src
-        run: go build
+        run: |
+          go mod download
+          cd src
+          go build

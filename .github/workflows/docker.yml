@@ -1,4 +1,4 @@
-name: Golang
+name: Docker
 on:
   - push
   - workflow_dispatch
@@ -16,7 +16,8 @@ jobs:
       # Build docker image
       - name: Build Docker
         if: github.event_name == 'push'
-        run: docker build -t $IMAGE_NAME
+        run: |
+          docker build -t $IMAGE_NAME
       # Push docker image
       - name: Push image
         if: github.event_name == 'push'
