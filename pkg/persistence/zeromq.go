@@ -5,11 +5,12 @@ import (
 	"encoding/json"
 	"github.com/pkg/errors"
 	zmq "github.com/zeromq/goczmq"
+	"go.uber.org/zap"
 )
 
 func makeZeroMQ() (Database, error) {
 	instance := new(zeromq)
-	context, err := zmq.NewPub("tcp://127.0.0.1:2222")
+	context, err := zmq.NewPub("tcp://0.0.0.0:2222")
 	if err != nil {
 		return nil, err
 	}
@@ -47,6 +48,7 @@ func (s *zeromq) AddNewTorrent(infoHash []byte, name string, files []File) error
 	if err != nil {
 		return errors.Wrap(err, "Failed to transmit")
 	}
+	zap.L().Debug(string(data))
 	return nil
 }
 
