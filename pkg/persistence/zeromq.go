@@ -9,7 +9,7 @@ import (
 
 func makeZeroMQ() (Database, error) {
 	instance := new(zeromq)
-	context, err := zmq.NewPub("udp://*:2222")
+	context, err := zmq.NewPub("tcp://127.0.0.1:2222")
 	if err != nil {
 		return nil, err
 	}
