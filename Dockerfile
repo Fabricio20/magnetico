@@ -1,7 +1,7 @@
 FROM golang:1.21-alpine AS build
 WORKDIR /magnetico
 
-RUN apk add --no-cache build-base libsodium libzmq czmq
+RUN apk add --no-cache build-base git curl libsodium libzmq czmq
 
 ADD ./pkg             /magnetico/pkg
 ADD ./go.mod          /magnetico/go.mod
