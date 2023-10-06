@@ -17,7 +17,7 @@ jobs:
       - name: Build Docker
         if: github.event_name == 'push'
         run: |
-          docker build -t $IMAGE_NAME
+          docker build -t $IMAGE_NAME .
       # Push docker image
       - name: Push image
         if: github.event_name == 'push'
